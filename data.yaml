@@ -1,0 +1,19 @@
+# AIdetect dataset (落石 / 滑坡 / 塌陷)
+# 路径使用正斜杠，Ultralytics 在 Windows 下可正常解析
+path: E:/Project/AIdetect/dataset
+train: images/train
+val: images/valid
+test: images/test
+
+# 类别 ID -> 名称（用户确认版）
+# 注意: cls0/cls1 与"按目标尺寸推断"的猜想相反，以本文件为准，后续所有模块统一引用此处
+#   cls 0:  8306 个实例 -> landslide 滑坡
+#   cls 1:  5449 个实例 -> collapse 塌陷
+#   cls 2: 38529 个实例, 平均框 0.128x0.131(小目标, 数量最多) -> rockfall 落石
+# 2026-09-16 标注口径统一(A2): ds3_fromnet(rf_*) 原把滑坡标成"局部滑动块",
+#   与 ds2 的"整个滑动块"口径冲突, 已用 tools/strip_subset_cls.py 剥离其全部滑坡框(669 个);
+#   现 landslide 口径只由 ds1+ds2(+ds4 少量) 定义。ds3 仍完整贡献 rockfall/collapse。
+names:
+  0: landslide
+  1: collapse
+  2: rockfall

@@ -1,0 +1,15 @@
+{
+  "smtp": {
+    "host": "smtp.example.com",
+    "port": 465,
+    "user": "alert@example.com",
+    "pass": "your-password",
+    "to": ["admin@example.com"]
+  },
+  "wechat": {
+    "webhook": "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=YOUR_KEY"
+  },
+  "dingtalk": {
+    "webhook": "https://oapi.dingtalk.com/robot/send?access_token=YOUR_TOKEN"
+  }
+}
